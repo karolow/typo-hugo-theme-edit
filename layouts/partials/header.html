@@ -5,7 +5,14 @@
     {{ if or (not (.Param "hideHeader")) .IsHome }}
 
     <h1 class="header-title">
-        <a href="{{ site.BaseURL }}">{{ site.Title }}</a>
+        {{ $title := site.Title }}
+        {{ $parts := split $title "." }}
+        {{ if eq (len $parts) 2 }}
+        <a href="{{ site.BaseURL }}">{{ index $parts 0 }}<span style="color: var(--primary-color);">.</span>{{ index
+            $parts 1 }}</a>
+        {{ else }}
+        <a href="{{ site.BaseURL }}">{{ $title }}</a>
+        {{ end }}
     </h1>
 
     <div class="flex">
@@ -13,9 +20,10 @@
 
         {{ with site.Params.menu }}
         {{ range . }}
-      
+
         <p class="small {{ if eq .name (lower $currentPage.Name) }} bold {{end}}">
-            <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            <a href="{{ .url }}" {{ if and (isset . "newTab" ) .newTab }}target="_blank" rel="noopener noreferrer" {{
+                end }}>
                 /{{.name }}
             </a>
         </p>

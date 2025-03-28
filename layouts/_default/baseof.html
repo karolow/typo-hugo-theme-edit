@@ -32,8 +32,15 @@
   {{ partialCached "math.html" . }}
   {{ end }}
 
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  {{ end }}
 </body>
 
-<script src="{{ "js/theme-switch.js" | relURL }}"></script>
-<script defer src="{{ "js/copy-code.js" | relURL }}"></script>
+<script src="{{ " js/theme-switch.js" | relURL }}"></script>
+<script defer src="{{ " js/copy-code.js" | relURL }}"></script>
+
 </html>

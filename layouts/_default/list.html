@@ -4,10 +4,17 @@
 
     {{ partial "breadcrumbs.html" . }}
 
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-
     {{ $tagsPage := eq .Title "Tags"}}
+    {{ $researchPage := eq .Section "research" }}
+
+    <h1>
+        {{ if $researchPage }}
+        Research
+        {{ else }}
+        {{ .Title }}
+        {{ end }}
+    </h1>
+    {{ .Content }}
 
     {{ $paginationSize := 1}}
     {{ if (gt .Site.Params.paginationSize 0) }}

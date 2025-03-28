@@ -1,1 +1,168 @@
-/* Place custom css here */
+:root {
+  --primary-color: #1abc9c;
+  /* Define the color as a variable */
+}
+
+/* Lead paragraph */
+.single-content p:first-of-type {
+  font-size: 24px;
+  /* Example font size */
+  font-weight: bold;
+}
+
+/* Code block */
+code {
+  font-size: .8em;
+}
+
+/* Tags */
+.single-tags {
+  color: var(--primary-color);
+  font-size: .8em;
+}
+
+/* Style the last character of the last paragraph */
+.single-content p:last-of-type::after {
+  content: " ●";
+  color: var(--primary-color);
+  font-size: 1em;
+}
+
+/* Line title in a list of posts*/
+.line-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.line-date {
+  min-width: 100px;
+  max-width: 100px;
+  text-align: left;
+}
+
+.header-title {
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+/* Style for the dot in header title */
+.header-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Post date and reading time */
+
+/* Tables */
+
+table {
+  font-size: .85em;
+}
+
+/* Style for the summary in post list */
+.post-line .line-summary {
+  font-size: .85em;
+  /* Inherit font size from parent */
+  margin-top: inherit;
+  /* Inherit margin from parent */
+  color: inherit;
+  /* Inherit text color from parent */
+  font-style: inherit;
+  /* Inherit font style (remove italic if it was set)*/
+}
+
+.post-line {
+  padding-top: 1rem;
+}
+
+
+/* images */
+
+figure>div {
+  padding-top: 1rem;
+}
+
+figcaption {
+  font-family: var(--font-mono);
+  margin-top: 0.2rem;
+  padding-left: var(--caption-padding);
+  text-align: left;
+}
+
+.caption-container {
+  display: flex;
+  justify-content: left;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  position: relative;
+  background-color: white;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.goat {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 0.5;
+  white-space: pre;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.profile-picture-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+.profile-picture {
+  width: 15%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+/* Goat diagrams */
+.goat {
+  font-size: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --header-top-gap: 1rem;
+    --social-icons-bottom-margin: 0rem;
+    --caption-padding: 0.1rem;
+  }
+
+  .header-title {
+    font-size: 1.8em;
+  }
+
+  /* Lead paragraph */
+  .single-content p:first-of-type {
+    font-size: 22px;
+    /* Example font size */
+    font-weight: bold;
+  }
+
+  .profile-picture {
+    width: 22%;
+  }
+
+  .profile-picture-container {
+    margin: 1rem 0;
+    /* Reduced from 2rem to 1rem for mobile */
+  }
+
+  .goat {
+    font-size: 13px;
+  }
+}

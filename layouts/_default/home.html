@@ -1,5 +1,9 @@
 {{ define "main" }}
 
+<div class="profile-picture-container">
+    <img src="/images/profile_picture.jpeg" alt="Profile Picture" class="profile-picture">
+</div>
+
 {{ .Content }}
 
 {{/* Intro summary section */}}
@@ -21,8 +25,7 @@
 {{ with site.Params.social }}
 <div class="social-icons">
     {{- range . }}
-    <a href="{{ trim .url " " | safeURL }}" target="_blank"
-        rel="noopener noreferrer me"
+    <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
         title="{{ (.title | default .name) | title }}">
         {{ partial "svg.html" . }}
     </a>
