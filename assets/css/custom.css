@@ -1,11 +1,26 @@
 :root {
-  --primary-color: #1abc9c;
   /* Define the color as a variable */
+  --primary-color: #1abc9c;
+
+  /* Typography */
+  --h2-font-size: 1.35em;
+  --h2-font-weight: 700;
+  --h3-font-size: 1.0em;
+  --h3-font-weight: 700;
+  --hx-font-size: 1.0em;
+}
+
+h2 {
+  font-weight: var(--h2-font-weight);
+}
+
+h3 {
+  font-weight: var(--h3-font-weight);
 }
 
 /* Lead paragraph */
 .single-content p:first-of-type {
-  font-size: 24px;
+  font-size: var(--h2-font-size);
   /* Example font size */
   font-weight: bold;
 }
